@@ -12029,4 +12029,36 @@ p {
 
 #btn-hero-reserver {
   margin-top: 16px;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.image-card {
+  position: relative;
+}
+.image-card:hover .titre-image {
+  opacity: 1;
+}
+.image-card:hover img {
+  filter: brightness(0.3);
+}
+.image-card img {
+  transition: all 0.6s;
+}
+.image-card .titre-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.6s;
+}
+
+/*    **** Media queries ****    */
+@media screen and (max-width: 991px) {
+  .hero-scene .hero-scene-content {
+    height: 150px;
+  }
 }/*# sourceMappingURL=main.css.map */

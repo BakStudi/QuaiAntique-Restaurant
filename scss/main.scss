@@ -53,3 +53,41 @@ p {
 #btn-hero-reserver {
     margin-top: 16px;
 }
+
+.text-justify {
+    text-align: justify;
+}
+
+.image-card {
+    position: relative;
+    &:hover {
+        .titre-image {
+            opacity: 1;
+        }
+        img {
+            filter: brightness(0.3);
+        }
+    }
+    
+    img {
+        transition: all 0.6s;
+    }
+
+    .titre-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all 0.6s;
+    }
+}
+
+
+/*    **** Media queries ****    */
+
+@media screen and (max-width: 991px) {
+    .hero-scene .hero-scene-content{
+        height: 150px;
+    }    
+}
