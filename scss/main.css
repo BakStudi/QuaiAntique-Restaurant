@@ -12057,8 +12057,13 @@ p {
 }
 
 /*    **** Media queries ****    */
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 600px) {
   .hero-scene .hero-scene-content {
     height: 150px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 991px) {
+  .hero-scene .hero-scene-content {
+    height: 250px;
   }
 }/*# sourceMappingURL=main.css.map */
