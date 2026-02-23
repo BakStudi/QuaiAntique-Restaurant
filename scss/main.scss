@@ -24,6 +24,7 @@ p {
 
 .hero-scene {
     position: relative;
+    margin-bottom: 16px;
     &::before {
         content: "";
         position: absolute;
@@ -96,4 +97,8 @@ p {
     .hero-scene .hero-scene-content{
         height: 250px;
     }    
+}
+
+.form-label {
+    color: $primary;
 }
