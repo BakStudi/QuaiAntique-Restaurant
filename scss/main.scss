@@ -62,7 +62,7 @@ p {
 .image-card {
     position: relative;
     &:hover {
-        .titre-image {
+        .titre-image, .image-action-buttons {
             opacity: 1;
         }
         img {
@@ -79,6 +79,18 @@ p {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all 0.6s;
+    }
+
+    .image-action-buttons {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 6px;
+        display: flex;
+        justify-content: space-between;
         opacity: 0;
         transition: all 0.6s;
     }
