@@ -4,27 +4,79 @@
 	</div>
 </div>
 
-<div class="container text-center">
+<div class="container text-center pt-4">
     <a href="/book" class="btn btn-primary">Réserver</a>
 </div>
 
 <div class="container text-center allreservations">
-    <a href="#">
-        <span>25/02/2026</span> | 
-        <span>12:35</span> | 
-        <span>6 personnes</span> | 
-        <span>Pas d'allergie</span>
-    </a>
-    <a href="#">
-        <span>25/02/2026</span> | 
-        <span>12:35</span> | 
-        <span>6 personnes</span> | 
-        <span>Pas d'allergie</span>
-    </a>
-    <a href="#">
-        <span>25/02/2026</span> | 
-        <span>12:35</span> | 
-        <span>6 personnes</span> | 
-        <span>Pas d'allergie</span>
-    </a>
+    <div class="bookLine pt-4">
+        <a href="#" class="bookLink">
+            <span>25/02/2026</span> | 
+            <span>12:45</span> | 
+            <span>6 personnes</span> | 
+            <span>Pas d'allergie</span>
+        </a>
+        <div class="image-action-buttons">
+            <!-- **** Afficher la réservation à modifier **** -->
+            <a class="btn btn-outline-primary btn-sm hideUnderMd" href="#" role="button"><i class="bi bi-pencil-square"></i> Modifier</a>
+            <!-- ou -->
+            <button type="button" class="btn btn-outline-primary btn-sm hideOverMd" data-bs-toggle="modal" data-bs-target="#EditBookingModal"><i class="bi bi-pencil-square"></i></button>
+
+            <!-- **** Modal de confirmation de suppression de la réservation **** -->
+            <a class="btn btn-outline-danger btn-sm hideUnderMd" href="#" role="button" data-bs-toggle="modal" data-bs-target="#CancelBookingModal"><i class="bi bi-trash"></i> Supprimer</a>
+            <!-- ou -->
+            <button type="button" class="btn btn-outline-danger btn-sm hideOverMd" data-bs-toggle="modal" data-bs-target="#CancelBookingModal"><i class="bi bi-trash"></i></button>
+        </div>
+    </div>
+    <div class="bookLine pt-4">
+        <a href="#" class="bookLink">
+            <span>12/03/2026</span> | 
+            <span>19:20</span> | 
+            <span>7 personnes</span> | 
+            <span>Pas d'allergie</span>
+        </a>
+        <div class="image-action-buttons">
+            <a class="btn btn-outline-primary btn-sm hideUnderMd" href="#" role="button"><i class="bi bi-pencil-square"></i> Modifier</a>
+            <button type="button" class="btn btn-outline-primary btn-sm hideOverMd" data-bs-toggle="modal" data-bs-target="#EditBookingModal"><i class="bi bi-pencil-square"></i></button>
+            <a class="btn btn-outline-danger btn-sm hideUnderMd" href="#" role="button" data-bs-toggle="modal" data-bs-target="#CancelBookingModal"><i class="bi bi-trash"></i> Supprimer</a>
+            <button type="button" class="btn btn-outline-danger btn-sm hideOverMd" data-bs-toggle="modal" data-bs-target="#CancelBookingModal"><i class="bi bi-trash"></i></button>
+        </div>
+    </div>
+    <div class="bookLine pt-4">
+        <a href="#" class="bookLink">
+            <span>21/04/2026</span> | 
+            <span>13:15</span> | 
+            <span>4 personnes</span> | 
+            <span>Pas d'allergie</span>
+        </a>
+        <div class="image-action-buttons">
+            <a class="btn btn-outline-primary btn-sm hideUnderMd" href="#" role="button"><i class="bi bi-pencil-square"></i> Modifier</a>
+            <button type="button" class="btn btn-outline-primary btn-sm hideOverMd" data-bs-toggle="modal" data-bs-target="#EditBookingModal"><i class="bi bi-pencil-square"></i></button>
+            <a class="btn btn-outline-danger btn-sm hideUnderMd" href="#" role="button" data-bs-toggle="modal" data-bs-target="#CancelBookingModal"><i class="bi bi-trash"></i> Supprimer</a>
+            <button type="button" class="btn btn-outline-danger btn-sm hideOverMd" data-bs-toggle="modal" data-bs-target="#CancelBookingModal"><i class="bi bi-trash"></i></button>
+        </div>
+    </div>
 </div>
+
+    <!-- Modal suppression-->
+    <div class="modal fade" id="CancelBookingModal" tabindex="-1" aria-labelledby="CancelBookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="CancelBookingModalLabel">Êtes-vous sûr de vouloir supprimer cette réservation ?</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <p>Afficher ici la réservation à supprimer</p>
+                        </div>
+                        <div class="text-center pt-4">
+                            <button type="button" class="btn btn-danger">Supprimer</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

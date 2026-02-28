@@ -12068,7 +12068,23 @@ p {
   transition: all 0.6s;
 }
 
-/*    **** Media queries ****    */
+.form-label {
+  color: #906427;
+}
+
+.allreservations .bookLink {
+  display: block;
+  color: #292222;
+  padding: 10px;
+}
+.allreservations .bookLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/*****    ************ Media queries ************    *****/
 @media screen and (max-width: 600px) {
   .hero-scene .hero-scene-content {
     height: 150px;
@@ -12079,12 +12095,18 @@ p {
     height: 250px;
   }
 }
-.form-label {
-  color: #906427;
+@media screen and (max-width: 455px) {
+  .bookLine {
+    font-size: 12px;
+  }
 }
-
-.allreservations a {
-  display: block;
-  color: #292222;
-  padding: 10px;
+@media screen and (max-width: 767px) {
+  .hideUnderMd {
+    display: none;
+  }
+}
+@media screen and (min-width: 767px) {
+  .hideOverMd {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */

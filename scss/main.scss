@@ -96,29 +96,55 @@ p {
     }
 }
 
-
-/*    **** Media queries ****    */
-
-@media screen and (max-width: 600px) {
-    .hero-scene .hero-scene-content{
-        height: 150px;
-    }    
-}
-
-@media screen and (min-width: 601px) and (max-width: 991px) {
-    .hero-scene .hero-scene-content{
-        height: 250px;
-    }    
-}
-
 .form-label {
     color: $primary;
 }
 
 .allreservations {
-    a {
+    .bookLink {
         display: block;
         color: $black;
         padding: 10px;
+    }
+
+    .bookLine {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+/*****    ************ Media queries ************    *****/
+
+@media screen and (max-width: 600px) {
+    .hero-scene .hero-scene-content {
+        height: 150px;
+    }    
+}
+
+@media screen and (min-width: 601px) and (max-width: 991px) {
+    .hero-scene .hero-scene-content {
+        height: 250px;
+    }    
+}
+
+@media screen and (max-width: 455px) {
+    .bookLine {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hideUnderMd {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .hideOverMd {
+        display: none;
     }
 }
