@@ -3,6 +3,7 @@ import Route from "./Route.js";
 // Définition des routes
 export const allRoutes = [
 	new Route("/", "Accueil", "/pages/home.html"),
+	new Route("/menu", "La carte", "/pages/menu.html"),
 	new Route("/galerie", "Galerie", "/pages/galerie.html", "/js/galerie.js"),
 	new Route("/signup", "Inscription", "/pages/auth/signup.html", "/js/auth/signup.js"),
 	new Route("/signin", "Connexion", "/pages/auth/signin.html"),
