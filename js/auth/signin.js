@@ -18,7 +18,7 @@ function checkCredentials() {
 
         // Placer ce token en cookie
 
-        setCookie(roleCookieName, "admin", 7);
+        setCookie(roleCookieName, "client", 7);
         window.location.replace("/");
     } else {
         inputEmail.classList.add("is-invalid");
