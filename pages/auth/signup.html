@@ -5,31 +5,31 @@
 </div>
 
 <div class="container">
-	<form>
+	<form id="registrationForm">
 		<div class="mb-3">
 			<label for="NameInput" class="form-label">Nom</label>
-			<input type="text" class="form-control" id="NameInput" placeholder="Votre nom">
+			<input type="text" class="form-control" id="NameInput" placeholder="Votre nom" name="name">
 			<div class="invalid-feedback">
 				Champs requis
 			</div>
 		</div>
 		<div class="mb-3">
 			<label for="FirstnameInput" class="form-label">Prénom</label>
-			<input type="text" class="form-control" id="FirstnameInput" placeholder="Votre prénom">
+			<input type="text" class="form-control" id="FirstnameInput" placeholder="Votre prénom" name="firstname">
 			<div class="invalid-feedback">
 				Champs requis
 			</div>
 		</div>
 		<div class="mb-3">
 			<label for="EmailInput" class="form-label">Email</label>
-			<input type="email" class="form-control" id="EmailInput" placeholder="exemple@laposte.fr">
+			<input type="email" class="form-control" id="EmailInput" placeholder="exemple@laposte.fr" name="email">
 			<div class="invalid-feedback">
 				Email invalide
 			</div>
 		</div>
 		<div class="mb-3">
 			<label for="PasswordInput" class="form-label">Mot de passe</label>
-			<input type="password" class="form-control" id="PasswordInput">
+			<input type="password" class="form-control" id="PasswordInput" name="password">
 			<div class="invalid-feedback">
 				Le mot de passe doit comporter au moins 8 caractères dont : 
 				<ul>
@@ -51,7 +51,7 @@
 			</div>
 		</div>
 		<div class="text-center pt-4">
-			<button type="submit" class="btn btn-primary" id="btn-validate-signup">Inscription</button>
+			<button type="button" class="btn btn-primary" id="btn-validate-signup">Inscription</button>
 		</div>
 	</form>
 	<div class="text-center pt-4">

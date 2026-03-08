@@ -3,6 +3,7 @@ const inputFirstname = document.getElementById("FirstnameInput");
 const inputEmail = document.getElementById("EmailInput");
 const inputPassword = document.getElementById("PasswordInput");
 const inputConfirmPassword = document.getElementById("ConfirmPasswordInput");
+const inputRegistrationForm = document.getElementById("registrationForm");
 
 const btnSignupValidate = document.getElementById("btn-validate-signup");
 
@@ -13,6 +14,8 @@ inputFirstname.addEventListener("keyup", validateForm);
 inputEmail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
 inputConfirmPassword.addEventListener("keyup", validateForm);
+
+btnSignupValidate.addEventListener("click", registerUser);
 
 
 
@@ -81,4 +84,40 @@ function validateRequired(input) {
         input.classList.add("is-invalid");
         return false;
     }
+}
+
+function registerUser() {
+    let dataForm = new FormData(inputRegistrationForm);
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    // ******** Récupérer les données des champs de la page signup ********
+    const raw = JSON.stringify({
+        "firstName": dataForm.get("firstname"),
+        "lastName": dataForm.get("name"),
+        "email": dataForm.get("email"),
+        "password": dataForm.get("password")
+    });
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+    fetch(apiUrl+"registration", requestOptions)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                alert("Erreur lors de l'inscription !");
+            }
+        })
+        .then((result) => {
+            alert("Bravo "+ dataForm.get("firstname") + ", vous êtes maintenant inscrit, vous pouvez vous connecter. ")
+            document.location.href="/signin";
+        })
+        .catch((error) => console.error(error));
 }

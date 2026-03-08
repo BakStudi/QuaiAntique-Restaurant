@@ -1,5 +1,6 @@
 const inputEmail = document.getElementById("EmailInput");
 const inputPassword = document.getElementById("PasswordInput");
+const inputSigninForm = document.getElementById("signinForm");
 
 const btnSignin = document.getElementById("SigninBtn");
 
@@ -8,20 +9,42 @@ btnSignin.addEventListener("click", checkCredentials);
 
 
 function checkCredentials() {
-    // Ici il faudra appeler l'API pour vérifier les credentials en BDD
+    let dataForm = new FormData(inputSigninForm);
 
-    if (inputEmail.value == "test@mail.com" && inputPassword.value == "azerty") {
+    // Appeler l'API pour vérifier les credentials en BDD
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-        // Il faudra récupérer le vrai token
-        const token = "jkhfvbsvnv,nloevhieuvbhuzeihezeiocheziuzucegigfcouz";
-        setToken(token);
+    // ******** Récupérer les données des champs de la page signup ********
+    const raw = JSON.stringify({
+        "username": dataForm.get("email"),
+        "password": dataForm.get("password")
+    });
 
-        // Placer ce token en cookie
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
 
-        setCookie(roleCookieName, "client", 7);
-        window.location.replace("/");
-    } else {
-        inputEmail.classList.add("is-invalid");
-        inputPassword.classList.add("is-invalid");
-    }
+    fetch(apiUrl+"login", requestOptions)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                inputEmail.classList.add("is-invalid");
+                inputPassword.classList.add("is-invalid");
+            }
+        })
+        .then((result) => {
+            // Récupération du token
+            const token = result.apiToken;
+            setToken(token);
+
+            // Placer ce token en cookie ainsi que le rôle
+            setCookie(roleCookieName, result.roles[0], 7);
+            window.location.replace("/");
+        })
+        .catch((error) => console.error(error));
 }
