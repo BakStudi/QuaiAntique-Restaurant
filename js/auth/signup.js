@@ -118,6 +118,7 @@ function registerUser() {
         .then((result) => {
             alert("Bravo "+ dataForm.get("firstname") + ", vous êtes maintenant inscrit, vous pouvez vous connecter. ")
             document.location.href="/signin";
+            console.log(result);
         })
         .catch((error) => console.error(error));
 }

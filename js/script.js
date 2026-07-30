@@ -1,3 +1,5 @@
+/* exported apiUrl, setToken, showAndHideElementsForRoles */
+
 // *******************************
 const tokenCookieName = "accesstoken";
 const roleCookieName = "role";

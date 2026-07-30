@@ -1,3 +1,5 @@
+/* exported apiUrl, roleCookieName, setToken, setCookie */
+
 const inputEmail = document.getElementById("EmailInput");
 const inputPassword = document.getElementById("PasswordInput");
 const inputSigninForm = document.getElementById("signinForm");
