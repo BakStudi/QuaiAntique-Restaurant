@@ -45,7 +45,21 @@ export default defineConfig([
         setToken: "writable",
         setCookie: "writable",
         roleCookieName: "writable",
+        sanitizeHtml: "readonly",
       },
+    },
+  },
+
+  {
+    files: ["**/*.js"],
+    rules: {
+      "no-var": "error",
+      "no-unused-vars": "error",
+      eqeqeq: "error",
+      "no-eval": "error",
+      "no-implied-eval": "error",
+      "no-script-url": "error",
+      // "prefer-const": "error",
     },
   },
 ]);

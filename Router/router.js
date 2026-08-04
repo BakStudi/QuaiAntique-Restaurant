@@ -9,12 +9,12 @@ const getRouteByUrl = (url) => {
   let currentRoute = null;
   // Parcours de toutes les routes pour trouver la correspondance
   allRoutes.forEach((element) => {
-    if (element.url == url) {
+    if (element.url === url) {
       currentRoute = element;
     }
   });
   // Si aucune correspondance n'est trouvée, on retourne la route 404
-  if (currentRoute != null) {
+  if (currentRoute !== null) {
     return currentRoute;
   } else {
     return route404;
@@ -49,9 +49,9 @@ const LoadContentPage = async () => {
   document.getElementById("main-page").innerHTML = html;
 
   // Ajout du contenu JavaScript
-  if (actualRoute.pathJS != "") {
+  if (actualRoute.pathJS !== "") {
     // Création d'une balise script
-    var scriptTag = document.createElement("script");
+    let scriptTag = document.createElement("script");
     scriptTag.setAttribute("type", "text/javascript");
     scriptTag.setAttribute("src", actualRoute.pathJS);
 
