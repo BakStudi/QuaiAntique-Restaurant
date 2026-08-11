@@ -1,4 +1,4 @@
-on : push
+on: push
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -6,9 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       # You may pin to the exact commit or the version.
       # uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287
+      - name: 📂 Install dependencies
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+
+      - name: 📂 Install npm dependencies
+        run: npm install
+              
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
@@ -39,6 +47,7 @@ jobs:
             **/node_modules/bootstrap/scss/**
             **/node_modules/bootstrap/js/**
             **/node_modules/bootstrap-icons/icons/**
+            **/node_modules/@popperjs/**
           # How verbose should the information be - minimal, standard, or verbose
           log-level: verbose # optional 
           # strict or loose
