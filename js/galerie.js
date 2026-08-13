@@ -1,15 +1,15 @@
 const galerieImage = document.getElementById("allImages");
 
-// Récupérer les informations des images
+// Objectif final : Récupérer les informations des images sur la bdd en contactant l'API
+
 let titre = '<img src=x onerror="window.location.replace(\'https://google.com\')">';
 let imgSource = "../images/wow_pho-food-712665_1920.jpg";
+
 
 let monImage = getImage(titre, imgSource);
 
 
-
 galerieImage.innerHTML = monImage;
-
 
 
 function getImage(titre, urlImage) {
